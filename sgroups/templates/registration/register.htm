@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample HTML for authorization</title>
+</head>
+<body>
+    <form method="Post" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% if form.errors %}
+        <p> There are errors in the form</p>
+        {% endif %}
+
+
+        {{form}}
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
